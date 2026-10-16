@@ -55,6 +55,45 @@ makalah-unri-si/
     └── finalize.py             # mengisi daftar isi dan nomor halaman
 ```
 
+## Cara pasang
+
+1. Di halaman repo ini, klik **Code**, lalu **Download ZIP**.
+2. Di Claude, buka **Settings**, lalu menu **Skills**, dan upload file zip tadi.
+3. Mulai chat baru supaya skill terbaca.
+
+Catatan:
+
+- Kalau sudah ada skill dengan nama sama, hapus yang lama dulu sebelum upload versi baru.
+- Zip dari GitHub berisi folder bernama `makalah-unri-si-main`. Kalau upload ditolak karena nama folder, ekstrak zip-nya, ganti nama foldernya jadi `makalah-unri-si`, kompres lagi, lalu upload.
+- Skill ini dan `makalah-unri` bisa dipasang berdampingan.
+
+## Cara pakai dengan panggil skill
+
+Panggil skill dengan `/makalah-unri-si` di chat, lalu kirim data makalahnya. Contoh:
+
+```
+/makalah-unri-si
+Buatkan makalah.
+- Judul: Proposal Penelitian
+- Mata kuliah: Bahasa Indonesia
+- Dosen pengampu: Nama Dosen, gelar.
+- Jumlah anggota: 4
+- Materi / poin bahasan:
+  - Pengertian proposal penelitian
+  - Struktur proposal penelitian
+  - Kaidah penulisan proposal
+- Referensi dari saya (boleh ditambah yang valid):
+  - https://doi.org/xxxx
+  - (atau unggah PDF-nya)
+```
+
+Data yang wajib: judul, mata kuliah, dosen pengampu, dan poin bahasan. Kalau ada yang kurang, Claude akan bertanya. Jumlah anggota default 4, dan logo UNRI sudah dipakai otomatis.
+
+Setelah file jadi:
+
+- Edit nama anggota, NIM, dan bulan-tahun di kata pengantar (masih placeholder).
+- Bila isi makalah kamu ubah, klik kanan daftar isi lalu pilih **Update Field** supaya nomor halaman diperbarui.
+
 ## Cara pakai bersama Claude
 
 1. Pasang folder `makalah-unri-si/` sebagai skill di Claude. Untuk Claude Code, taruh di `~/.claude/skills/makalah-unri-si/` (atau `.claude/skills/` di dalam proyek).
