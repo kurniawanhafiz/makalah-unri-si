@@ -130,7 +130,7 @@ Ringkasnya: `meta` (judul, matkul, dosen, universitas, tahun, jumlah_anggota, ko
 
 ## Varian
 
-Untuk program studi atau fakultas lain, gunakan versi dasarnya, [`makalah-unri`](../makalah-unri). Cover-nya tidak menampilkan baris program studi, dan baris fakultas hanya muncul bila `meta.fakultas` diisi.
+Untuk program studi atau fakultas lain, gunakan versi dasarnya, [`makalah-unri`](../../makalah-unri). Cover-nya tidak menampilkan baris program studi, dan baris fakultas hanya muncul bila `meta.fakultas` diisi.
 
 ## Catatan
 
