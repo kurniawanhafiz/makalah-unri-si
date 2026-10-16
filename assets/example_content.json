@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "judul": "Kalimat Efektif",
+    "matkul": "Bahasa Indonesia",
+    "dosen": "Nama Dosen, M.Pd.",
+    "universitas": "UNIVERSITAS RIAU",
+    "tahun": "2026",
+    "jumlah_anggota": 4,
+    "kota": "Pekanbaru",
+    "bulan_tahun": "Oktober 2026"
+  },
+  "kata_pengantar": [
+    "Puji syukur kami panjatkan ke hadirat Allah Swt. atas rahmat dan karunia-Nya sehingga makalah berjudul “Kalimat Efektif” ini dapat kami selesaikan.",
+    "Kami menyadari makalah ini masih memiliki kekurangan. Kritik dan saran sangat kami harapkan."
+  ],
+  "bab": [
+    {
+      "judul": "Pendahuluan",
+      "sections": [
+        { "judul": "Latar Belakang", "blocks": [
+          { "t": "p", "text": "Contoh paragraf latar belakang. Sitasi ditulis seperti ini: Penulis (2023) menyatakan bahwa ... atau (Penulis, 2023)." }
+        ] },
+        { "judul": "Rumusan Masalah", "blocks": [
+          { "t": "p", "text": "Rumusan masalah dalam makalah ini adalah sebagai berikut." },
+          { "t": "list", "items": ["Apa yang dimaksud dengan kalimat efektif?", "Apa saja ciri kalimat efektif?"] }
+        ] }
+      ]
+    },
+    {
+      "judul": "Pembahasan",
+      "sections": [
+        { "judul": "Pengertian Kalimat Efektif", "blocks": [
+          { "t": "p", "text": "Contoh paragraf biasa. Judul buku atau jurnal ditulis miring dengan tanda bintang, misalnya *Jurnal Contoh*." },
+          { "t": "quote", "text": "Contoh paragraf rekaan yang menjorok ke dalam, dipakai untuk contoh kalimat atau contoh paragraf." },
+          { "t": "table", "caption": "Contoh kalimat tidak efektif dan perbaikannya", "headers": ["Tidak efektif", "Efektif"], "rows": [["Naik ke atas", "Naik"]] }
+        ],
+        "subs": [
+          { "judul": "Sub Pembahasan Contoh", "blocks": [ { "t": "p", "text": "Paragraf di bawah sub-subbab (2.1.1) sejajar dengan teks sub-subbab." } ] }
+        ] }
+      ]
+    },
+    {
+      "judul": "Penutup",
+      "sections": [
+        { "judul": "Kesimpulan", "blocks": [ { "t": "p", "text": "Contoh kesimpulan." } ] },
+        { "judul": "Saran", "blocks": [ { "t": "p", "text": "Contoh saran." } ] }
+      ]
+    }
+  ],
+  "daftar_pustaka": [
+    "Penulis, A. (2023). Judul artikel contoh. *Nama Jurnal*, *10*(2), 1–10. https://doi.org/10.0000/contoh"
+  ]
+}
