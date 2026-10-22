@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "judul": "Contoh Makalah Kombinasi dan Koefisien Binomial",
+    "matkul": "Matematika Diskrit",
+    "dosen": "Nama Dosen, M.Kom.",
+    "universitas": "UNIVERSITAS RIAU",
+    "tahun": "2026",
+    "jumlah_anggota": 4,
+    "kota": "Pekanbaru",
+    "bulan_tahun": "Oktober 2026",
+    "ref_config": { "jumlah_min": 2, "jumlah_maks": 8, "umur_maks_tahun": 10, "min_indonesia": 1 }
+  },
+  "kata_pengantar": [
+    "Puji syukur kami panjatkan kepada Tuhan Yang Maha Esa atas terselesaikannya makalah contoh ini.",
+    "Terima kasih kami sampaikan kepada dosen pengampu dan rekan kelompok yang telah membantu penyusunan makalah ini.",
+    "Kami menyadari makalah ini belum sempurna, sehingga kritik dan saran sangat kami harapkan."
+  ],
+  "bab": [
+    {
+      "judul": "Pendahuluan",
+      "sections": [
+        { "judul": "Latar Belakang", "blocks": [
+          { "t": "p", "text": "Teknik membilang dipakai untuk menghitung banyaknya cara menyusun atau memilih objek tanpa mendaftarnya satu per satu. Alfa (2023) menjelaskan bahwa kombinasi dan permutasi menjadi dasar banyak perhitungan di bidang informatika." },
+          { "t": "p", "text": "Selain itu, koefisien binomial muncul pada penjabaran $(x+y)^n$ dan kerap dibahas bersama kombinasi (Beta & Gamma, 2022)." }
+        ]},
+        { "judul": "Rumusan Masalah", "blocks": [
+          { "t": "list", "items": ["Apa yang dimaksud dengan kombinasi?", "Bagaimana hubungan kombinasi dengan koefisien binomial?"] }
+        ]},
+        { "judul": "Tujuan Penulisan", "blocks": [
+          { "t": "list", "items": ["Menjelaskan pengertian kombinasi.", "Menjelaskan hubungan kombinasi dengan koefisien binomial."] }
+        ]},
+        { "judul": "Manfaat Penulisan", "blocks": [
+          { "t": "p", "text": "Makalah ini diharapkan membantu pembaca memahami cara menghitung kombinasi dan menggunakannya pada soal sederhana." }
+        ]}
+      ]
+    },
+    {
+      "judul": "Pembahasan",
+      "sections": [
+        { "judul": "Kombinasi", "blocks": [
+          { "t": "p", "text": "Kombinasi adalah cara memilih $r$ objek dari $n$ objek tanpa memperhatikan urutan (Alfa, 2023). Banyaknya kombinasi dihitung dengan rumus berikut." },
+          { "t": "equation", "latex": "C(n,r) = \\binom{n}{r} = \\frac{n!}{r!\\,(n-r)!}", "nomor": true },
+          { "t": "p", "text": "Alur penghitungan ditunjukkan pada gambar berikut." },
+          { "t": "image", "path": "example_diagram.png", "caption": "Alur penghitungan kombinasi (contoh rekaan).", "width_cm": 10 }
+        ]},
+        { "judul": "Koefisien Binomial", "blocks": [
+          { "t": "p", "text": "Teorema binomial menyatakan bahwa penjabaran pangkat dua suku dapat ditulis dengan koefisien kombinasi (Beta & Gamma, 2022)." },
+          { "t": "equation", "latex": "(x+y)^n = \\sum_{k=0}^{n} \\binom{n}{k} x^{n-k} y^{k}" }
+        ]},
+        { "judul": "Studi Kasus", "blocks": [
+          { "t": "p", "text": "Berikut contoh rekaan: sebuah tim memilih 2 orang dari 5 anggota untuk presentasi. Banyak pilihan adalah $C(5,2)$." },
+          { "t": "equation", "latex": "C(5,2) = \\frac{5!}{2!\\,3!} = \\frac{5 \\times 4}{2 \\times 1} = 10" }
+        ]}
+      ]
+    },
+    {
+      "judul": "Penutup",
+      "sections": [
+        { "judul": "Kesimpulan", "blocks": [
+          { "t": "p", "text": "Kombinasi menghitung pilihan tanpa urutan, dan nilainya sama dengan koefisien binomial pada penjabaran pangkat." }
+        ]},
+        { "judul": "Saran", "blocks": [
+          { "t": "p", "text": "Pembaca disarankan berlatih dengan soal yang lebih beragam sebelum mempelajari permutasi." }
+        ]}
+      ]
+    }
+  ],
+  "daftar_pustaka": [
+    "Alfa, A. (2023). [Contoh, ganti dengan sumber asli] Teknik membilang untuk informatika. *Jurnal Contoh*, *1*(1), 1–10. https://doi.org/10.0000/contoh.alfa",
+    "Beta, B., & Gamma, C. (2022). [Contoh, ganti dengan sumber asli] Koefisien binomial dan penerapannya. *Journal of Example*, *2*(2), 11–20. https://doi.org/10.0000/contoh.beta"
+  ],
+  "verifikasi_referensi": [
+    { "ref": "Alfa, A. (2023)", "ditemukan_lewat": "Consensus", "dicek_lewat": "contoh (ganti saat dipakai)", "bahasa": "id" },
+    { "ref": "Beta, B., & Gamma, C. (2022)", "ditemukan_lewat": "Pencarian web", "dicek_lewat": "contoh (ganti saat dipakai)", "bahasa": "en" }
+  ],
+  "sumber_dibuang": []
+}
