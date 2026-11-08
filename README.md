@@ -10,32 +10,6 @@ Skill untuk membuat **makalah kuliah berbahasa Indonesia** dalam format `.docx` 
 - `--docx` menghasilkan `.docx` biasa tanpa makro, untuk portal kampus yang menolak `.docm`.
 - Struktur `.docm` diperiksa otomatis (zip dan XML valid, makro, shortcut, dan building block tersalin utuh dari template). Makronya sendiri belum bisa dijalankan di mesin pembuat; cek langkah di bagian [Template Word dan makro](#template-word-dan-makro).
 
-## Apa yang baru di v6
-
-- **Memakai template Word `assets/Normal.dotm`.** Heading 1 ("BAB I"), Heading 2 (1.1), Heading 3 (1.1.1) sampai Heading 9 bernomor otomatis; DAFTAR ISI, KATA PENGANTAR, dan DAFTAR PUSTAKA memakai style Heading Default (Title); paragraf memakai Body Main, Body 2, dan Body 3. Hasilnya mudah diedit sendiri di Word: ganti level heading lewat style, nomor ikut berubah.
-- **Daftar Gambar dan Daftar Tabel otomatis** bila makalah punya gambar atau tabel (keterangan memakai style Caption dengan nomor otomatis).
-- Ukuran font cover: seluruh teks cover 13 (supaya baris fakultas tidak patah jadi dua baris). Varian dasar `makalah-unri` tetap 14.
-- Label "contoh rekaan" tidak dipakai lagi, dan data pribadi dibersihkan dari contoh dan dokumentasi.
-- Cara pasang di Claude Code, Hermes Agent, dan OpenClaw ada di bagian [Cara pasang](#cara-pasang).
-
-### Yang sudah ada di v5
-
-- **Consensus AI dan OpenAlex dipakai bersamaan.** Bila kedua konektor terpasang, terhubung, dan belum limit, tiap butir materi dicari di keduanya, hasil digabung, dan duplikat dibuang. Bisa juga menetapkan di prompt salah satu sebagai utama dan yang lain pelengkap, atau membagi tugas keduanya.
-- Bila hanya satu konektor yang tersedia, skill memakai yang tersedia lalu melengkapi dengan pencarian web. Bila tidak ada, skill memakai pencarian web (DOAJ, Garuda, laman jurnal, dst).
-- Ketentuan bawaan tiap konektor: open access, tanpa preprint, 5 tahun terakhir (OpenAlex: karya, `fulltext`, Boolean dan stemming aktif). Bisa diganti lewat prompt.
-- Sumber berbahasa Indonesia dicari lewat semua jalur sekaligus, lalu pencarian web bila masih kurang.
-- Hasil Consensus tanpa DOI dicocokkan lewat OpenAlex, dan semua sumber tetap diverifikasi ke laman aslinya.
-
-### Yang sudah ada sejak v3
-
-- Daftar pustaka rata kiri-kanan dan menggantung sudah dipasang langsung di skrip, begitu juga spasi 12 pt setelah Heading 1.
-- Satu perintah untuk seluruh alur: `python3 scripts/build.py content.json hasil.docx`.
-- Blok `equation` (LaTeX jadi equation Word yang bisa diedit), rumus sebaris `$...$`, dan blok `image` dengan keterangan "Gambar n." otomatis.
-- Validator `check_content.py` sebelum build: sitasi, urutan abjad, jumlah dan tahun referensi, bahasa, em dash, dan kata gemar AI.
-- `preview.sh` merender cover, daftar isi, halaman bab, dan daftar pustaka ke PNG.
-- Tabel status referensi untuk ringkasan akhir.
-- Skrip tidak lagi terkunci ke path tertentu.
-
 Daftar lengkap ada di [CHANGELOG.md](CHANGELOG.md).
 
 ## Apa yang dihasilkan
