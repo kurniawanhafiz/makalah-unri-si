@@ -12,29 +12,6 @@ A skill that builds **Indonesian-language university papers (makalah)** as ready
 
 **Quick check in Word:** if the file was downloaded, right-click it, **Properties**, tick **Unblock**; open it, click **Enable Content**, then try `Ctrl+D` and `Ctrl+G`. If a portal rejects `.docm`, use **Save As** `.docx` in Word (macros are dropped) or build with `--docx`.
 
-## What's new in v6
-
-- **Uses the Word template `assets/Normal.dotm`.** Heading 1 ("BAB I"), Heading 2 (1.1), Heading 3 (1.1.1) through Heading 9 are numbered automatically; TABLE OF CONTENTS, PREFACE, and REFERENCES use the Heading Default (Title) style; paragraphs use Body Main, Body 2, and Body 3. The result is easy to edit in Word: change a heading level through its style and the numbering follows.
-- **Automatic List of Figures and List of Tables** when the paper has figures or tables (captions use the Caption style with automatic numbering).
-- Cover font size: all cover text is 13 pt (so the faculty line stays on one line). The base `makalah-unri` skill keeps 14 pt.
-- The "contoh rekaan" (made-up example) label is gone, and personal data was removed from examples and docs.
-- Install instructions for Claude Code, Hermes Agent, and OpenClaw are in [Install](#install).
-
-### In v5
-
-- **Consensus AI and OpenAlex used together**, each with its own defaults (open access, no preprints, past 5 years), merged and de-duplicated; one connector or web search as fallback.
-- Indonesian-language sources searched through every route; Consensus results without a DOI are matched through OpenAlex, and every source is still verified against the original page.
-
-### Since v3
-
-- Justified and hanging-indent reference list, and 12 pt spacing after Heading 1, are built in.
-- One command for the whole pipeline: `python3 scripts/build.py content.json out.docx`.
-- `equation` blocks (LaTeX converted to editable Word equations), inline `$...$` math, and `image` blocks with automatic "Gambar n." captions.
-- `check_content.py` validator before building: citations, alphabetical order, source count and years, language, em dashes, and AI-favoured words.
-- `preview.sh` renders the cover, table of contents, chapter pages, and reference list to PNG.
-- Reference status table for the final summary.
-- Scripts no longer depend on environment-specific paths.
-
 See [CHANGELOG.md](CHANGELOG.md) for the full list.
 
 ## Output
