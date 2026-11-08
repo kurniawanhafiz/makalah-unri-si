@@ -12,24 +12,6 @@ Skill untuk membuat **makalah kuliah berbahasa Indonesia** dalam format `.docx` 
 - Label "contoh rekaan" tidak dipakai lagi, dan data pribadi dibersihkan dari contoh dan dokumentasi.
 - Cara pasang di Claude Code, Hermes Agent, dan OpenClaw ada di bagian [Cara pasang](#cara-pasang).
 
-### Yang sudah ada di v5
-
-- **Consensus AI dan OpenAlex dipakai bersamaan.** Bila kedua konektor terpasang, terhubung, dan belum limit, tiap butir materi dicari di keduanya, hasil digabung, dan duplikat dibuang. Bisa juga menetapkan di prompt salah satu sebagai utama dan yang lain pelengkap, atau membagi tugas keduanya.
-- Bila hanya satu konektor yang tersedia, skill memakai yang tersedia lalu melengkapi dengan pencarian web. Bila tidak ada, skill memakai pencarian web (DOAJ, Garuda, laman jurnal, dst).
-- Ketentuan bawaan tiap konektor: open access, tanpa preprint, 5 tahun terakhir (OpenAlex: karya, `fulltext`, Boolean dan stemming aktif). Bisa diganti lewat prompt.
-- Sumber berbahasa Indonesia dicari lewat semua jalur sekaligus, lalu pencarian web bila masih kurang.
-- Hasil Consensus tanpa DOI dicocokkan lewat OpenAlex, dan semua sumber tetap diverifikasi ke laman aslinya.
-
-### Yang sudah ada sejak v3
-
-- Daftar pustaka rata kiri-kanan dan menggantung sudah dipasang langsung di skrip, begitu juga spasi 12 pt setelah Heading 1.
-- Satu perintah untuk seluruh alur: `python3 scripts/build.py content.json hasil.docx`.
-- Blok `equation` (LaTeX jadi equation Word yang bisa diedit), rumus sebaris `$...$`, dan blok `image` dengan keterangan "Gambar n." otomatis.
-- Validator `check_content.py` sebelum build: sitasi, urutan abjad, jumlah dan tahun referensi, bahasa, em dash, dan kata gemar AI.
-- `preview.sh` merender cover, daftar isi, halaman bab, dan daftar pustaka ke PNG.
-- Tabel status referensi untuk ringkasan akhir.
-- Skrip tidak lagi terkunci ke path tertentu.
-
 Daftar lengkap ada di [CHANGELOG.md](CHANGELOG.md).
 
 ## Apa yang dihasilkan
