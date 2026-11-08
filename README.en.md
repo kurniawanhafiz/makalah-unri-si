@@ -12,21 +12,6 @@ A skill that builds **Indonesian-language university papers (makalah)** as ready
 - The "contoh rekaan" (made-up example) label is gone, and personal data was removed from examples and docs.
 - Install instructions for Claude Code, Hermes Agent, and OpenClaw are in [Install](#install).
 
-### In v5
-
-- **Consensus AI and OpenAlex used together**, each with its own defaults (open access, no preprints, past 5 years), merged and de-duplicated; one connector or web search as fallback.
-- Indonesian-language sources searched through every route; Consensus results without a DOI are matched through OpenAlex, and every source is still verified against the original page.
-
-### Since v3
-
-- Justified and hanging-indent reference list, and 12 pt spacing after Heading 1, are built in.
-- One command for the whole pipeline: `python3 scripts/build.py content.json out.docx`.
-- `equation` blocks (LaTeX converted to editable Word equations), inline `$...$` math, and `image` blocks with automatic "Gambar n." captions.
-- `check_content.py` validator before building: citations, alphabetical order, source count and years, language, em dashes, and AI-favoured words.
-- `preview.sh` renders the cover, table of contents, chapter pages, and reference list to PNG.
-- Reference status table for the final summary.
-- Scripts no longer depend on environment-specific paths.
-
 See [CHANGELOG.md](CHANGELOG.md) for the full list.
 
 ## Output
@@ -56,7 +41,7 @@ Replace `<username>` with the GitHub account that owns this repo. After installi
 **Claude Code:**
 
 ```bash
-git clone https://github.com/<username>/makalah-unri-si.git ~/.claude/skills/makalah-unri-si
+git clone https://github.com/kurniawanhafiz/makalah-unri-si.git ~/.claude/skills/makalah-unri-si
 ```
 
 (or `.claude/skills/makalah-unri-si` inside a project for a per-project skill).
@@ -64,7 +49,7 @@ git clone https://github.com/<username>/makalah-unri-si.git ~/.claude/skills/mak
 **Hermes Agent:** skills live in `~/.hermes/skills/`, one folder per skill with a `SKILL.md`:
 
 ```bash
-git clone https://github.com/<username>/makalah-unri-si.git ~/.hermes/skills/makalah-unri-si
+git clone https://github.com/kurniawanhafiz/makalah-unri-si.git ~/.hermes/skills/makalah-unri-si
 ```
 
 Or keep the folder elsewhere and list its parent under `skills.external_dirs` in `~/.hermes/config.yaml`.
@@ -72,7 +57,7 @@ Or keep the folder elsewhere and list its parent under `skills.external_dirs` in
 **OpenClaw:** put the folder in the `skills` folder of your OpenClaw workspace (workspace skills have the highest precedence):
 
 ```bash
-git clone https://github.com/<username>/makalah-unri-si.git <workspace>/skills/makalah-unri-si
+git clone https://github.com/kurniawanhafiz/makalah-unri-si.git <workspace>/skills/makalah-unri-si
 ```
 
 If it does not show up, check the OpenClaw Skills docs (folder precedence and `skills.load.extraDirs`).
