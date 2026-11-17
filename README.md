@@ -1,16 +1,18 @@
 # makalah-unri-si
 
-Skill untuk membuat **makalah kuliah berbahasa Indonesia** dalam format `.docx` yang siap dikumpulkan, khusus **Program Studi Sistem Informasi, FMIPA, Universitas Riau (UNRI)**. Cover, daftar isi otomatis, penomoran halaman, penomoran heading, rumus, gambar, dan daftar pustaka APA sudah diatur oleh skrip, jadi pengguna cukup memberi materi dan referensi.
+Skill untuk membuat **makalah kuliah berbahasa Indonesia** siap kumpul, khusus **Program Studi Sistem Informasi, FMIPA, Universitas Riau (UNRI)**, keluaran bawaan `.docm` (atau `.docx` dengan `--docx`). Cover, daftar isi otomatis, penomoran halaman, penomoran heading, rumus, gambar, dan daftar pustaka APA sudah diatur oleh skrip, jadi pengguna cukup memberi materi dan referensi. Shortcut keyboard untuk merapikan makalah di Word ikut tertanam, daftarnya ada di [SHORTCUT.md](SHORTCUT.md).
 
 > **Dibuat oleh Kurniawan Hafiz** | Versi 6.1.0 | [English](README.en.md)
 
+Skill ini varian dari [makalah-unri](https://github.com/kurniawanhafiz/makalah-unri): isi dan format sama, hanya cover yang beda (ada baris fakultas dan program studi). Untuk cover UNRI umum tanpa dua baris itu, pakai `makalah-unri`.
+
 ## Apa yang baru di v6.1
 
-- **Keluaran bawaan `.docm`.** Proyek VBA, shortcut keyboard, dan building block dari `assets/Normal.dotm` ikut tersalin ke makalah, jadi Ctrl+1 sampai Ctrl+9 (heading), Ctrl+D (daftar isi), Ctrl+G (keterangan gambar), Ctrl+T (keterangan tabel), dan lainnya langsung aktif tanpa memasang template.
+- **Keluaran bawaan `.docm`.** Proyek VBA, shortcut keyboard, dan building block dari `assets/Normal.dotm` ikut tersalin ke makalah, jadi Ctrl+1 sampai Ctrl+9 (heading), Alt+1 sampai Alt+9 (style paragraf), Ctrl+D (daftar isi), Ctrl+G (keterangan gambar), Ctrl+T (keterangan tabel), dan lainnya langsung aktif tanpa memasang template. Daftar lengkap ada di [SHORTCUT.md](SHORTCUT.md).
 - `--docx` menghasilkan `.docx` biasa tanpa makro, untuk portal kampus yang menolak `.docm`.
 - Struktur `.docm` diperiksa otomatis (zip dan XML valid, makro, shortcut, dan building block tersalin utuh dari template). Makronya sendiri belum bisa dijalankan di mesin pembuat; cek langkah di bagian [Template Word dan makro](#template-word-dan-makro).
 
-Daftar lengkap ada di [CHANGELOG.md](CHANGELOG.md).
+Riwayat versi sebelumnya (v6 template Word, v5 Consensus dan OpenAlex, v3 dan seterusnya) ada di [CHANGELOG.md](CHANGELOG.md).
 
 ## Apa yang dihasilkan
 
@@ -19,8 +21,8 @@ Satu file `.docm` (atau `.docx` dengan `--docx`) dengan urutan: cover, daftar is
 Format yang sudah dipasang:
 
 - Kertas A4, margin 4-3-3-3 (kiri 4 cm, atas 3, kanan 3, bawah 3).
-- Times New Roman 12, spasi 1,5, rata kiri-kanan. Seluruh teks cover memakai ukuran 13.
-- Cover selalu menampilkan baris fakultas dan program studi di atas nama universitas. Keduanya bisa diganti lewat `meta.fakultas` dan `meta.prodi`.
+- Times New Roman 12, spasi 1,5, rata kiri-kanan. Seluruh teks cover memakai ukuran 13 (supaya baris fakultas muat satu baris; varian dasar `makalah-unri` memakai 14).
+- Cover selalu menampilkan baris fakultas dan program studi di atas nama universitas. Keduanya bisa diganti lewat `meta.fakultas` dan `meta.prodi` (string kosong untuk menyembunyikan).
 - Nomor halaman: cover dihitung halaman i tetapi nomornya disembunyikan; daftar isi dan kata pengantar memakai angka romawi di tengah bawah; Bab I sampai III memakai angka mulai 1 di kanan bawah; daftar pustaka tanpa nomor yang terlihat.
 - Penomoran heading otomatis dari style template: BAB I, 1.1, 1.2, 2.1, dan sub-subbab 2.4.1.
 - Daftar isi otomatis (field TOC level 1 sampai 3) lengkap dengan nomor halaman.
@@ -51,6 +53,7 @@ Sebagian aturan itu sekarang dicek mesin lewat `check_content.py`, jadi pelangga
 makalah-unri-si/
 ├── README.md                   # file ini
 ├── README.en.md                # versi Inggris
+├── SHORTCUT.md                 # daftar shortcut keyboard di makalah hasil skill
 ├── SKILL.md                    # instruksi skill untuk Claude
 ├── CHANGELOG.md                # catatan perubahan
 ├── LICENSE                     # MIT
@@ -75,7 +78,7 @@ makalah-unri-si/
 
 ## Cara pasang
 
-Ganti `<username>` dengan nama akun GitHub pemilik repo ini. Setelah dipasang, mulai sesi atau chat baru supaya skill terbaca, lalu panggil dengan `/makalah-unri-si`.
+Setelah dipasang, mulai sesi atau chat baru supaya skill terbaca, lalu panggil dengan `/makalah-unri-si`.
 
 ### Claude (claude.ai atau aplikasi desktop)
 
@@ -136,9 +139,22 @@ Makalah dibuat sebagai `.docm` yang membawa makro dari `assets/Normal.dotm`. Car
 
 1. Bila `.docm` diunduh dari internet, klik kanan berkas, pilih **Properties**, centang **Unblock**, lalu OK. Tanpa ini Word memblokir makro.
 2. Buka di Word, lalu klik **Enable Content** pada bilah kuning.
-3. Cek cepat: `Ctrl+D` untuk daftar isi, `Ctrl+G` untuk keterangan gambar.
+3. Cek cepat: taruh kursor di baris kosong paling akhir, tekan `Ctrl+D` (muncul judul "DAFTAR ISI"), lalu batalkan dengan `Ctrl+Z` (cara aman dan detailnya ada di [SHORTCUT.md](SHORTCUT.md#sebelum-mulai)).
 
-Beberapa shortcut di template: `Ctrl+1` sampai `Ctrl+9` heading, `Ctrl+D` daftar isi, `Ctrl+G` keterangan gambar, `Ctrl+T` keterangan tabel, `Ctrl+L` keterangan lampiran, `Alt+R` dan `Alt+L` nomor halaman romawi dan angka, `Alt+N` section baru, `Alt+S` ekspor PDF.
+Shortcut yang paling sering dipakai:
+
+| Shortcut | Fungsi |
+|---|---|
+| `Ctrl+1` sampai `Ctrl+9` | Heading 1 sampai 9 (BAB, 1.1, 1.1.1, dst) |
+| `Alt+1` sampai `Alt+9` | Style paragraf Body Main, Body 2 sampai Body 9 |
+| `Ctrl+D` | Daftar isi otomatis |
+| `Ctrl+G` / `Ctrl+Alt+G` | Keterangan gambar (dengan / tanpa nomor bab) |
+| `Ctrl+T` / `Ctrl+Alt+T` | Keterangan tabel (dengan / tanpa nomor bab) |
+| `Alt+R` / `Alt+L` | Nomor halaman romawi / angka di tengah bawah |
+| `Alt+N` | Section baru (halaman baru) |
+| `Alt+S` | Ekspor PDF |
+
+Daftar lengkap (daftar gambar, tabel, lampiran, pemeriksaan teks, makro tanpa shortcut, dan shortcut bawaan Word yang tertimpa) ada di **[SHORTCUT.md](SHORTCUT.md)**.
 
 Bila portal kampus menolak `.docm`: di Word pilih **Save As** lalu format `.docx` (makro hilang, style dan penomoran tetap), atau bangun dengan `--docx`. Makro tidak bisa disimpan di `.docx`. Untuk dokumen `.docx` yang tetap ingin memakai shortcut, pasang `assets/Normal.dotm` lewat **Developer > Document Template > Attach** (jangan centang "Automatically update document styles").
 
@@ -168,6 +184,7 @@ Setelah file jadi:
 
 - Edit nama anggota, NIM (`( NIM )`), dan bulan-tahun di kata pengantar.
 - Klik kanan daftar isi lalu pilih **Update Field** supaya nomor halaman pasti, terutama bila makalah memuat rumus.
+- Buka [SHORTCUT.md](SHORTCUT.md) bila ingin merapikan atau menambah bagian di Word dengan shortcut.
 
 ## Cara pakai manual (tanpa Claude)
 
@@ -207,6 +224,7 @@ Ringkasnya: `meta` (judul, matkul, dosen, universitas, tahun, jumlah_anggota, ko
 - Validator membaca sitasi dengan pola `Penulis (tahun)` dan `(Penulis, tahun)`. Pola yang tidak biasa bisa terlewat atau salah baca; pakai `meta.lewati_sitasi` untuk kasus yang sengaja.
 - Bahasa referensi dihitung dari `verifikasi_referensi[].bahasa`; tanpa itu hanya perkiraan.
 - Skill tidak bisa memastikan sebuah link terbuka dari mesinmu. Periksa kembali setiap referensi sebelum dikumpulkan.
+- Shortcut dan makro ditulis untuk Word desktop di Windows. Word Online tidak menjalankan makro.
 
 ## Pemecahan masalah
 
@@ -218,7 +236,7 @@ Ringkasnya: `meta` (judul, matkul, dosen, universitas, tahun, jumlah_anggota, ko
 | Rumus kosong di preview | Lihat batasan di atas. Cek di Word. |
 | Nomor halaman daftar isi meleset | Klik kanan daftar isi, **Update Field**. |
 | Zip ditolak saat upload skill | Ganti nama folder hasil ekstrak jadi `makalah-unri-si`, kompres ulang. |
-| Shortcut Word dari template tidak jalan | Pastikan berkas `.docm`, sudah di-Unblock (Properties), dan Enable Content diklik. File `.docx` tidak membawa makro. |
+| Shortcut Word dari template tidak jalan | Pastikan berkas `.docm`, sudah di-Unblock (Properties), dan Enable Content diklik. File `.docx` tidak membawa makro. Detail ada di [SHORTCUT.md](SHORTCUT.md#shortcut-tidak-jalan). |
 
 ## Catatan
 
